@@ -30,7 +30,7 @@ fun Application.main() {
         get("/") {
 
             val databaseHelper = DatabaseHelper()
-            databaseHelper.runQuery("SELECT id, name from site_db.sites where id = 2;")
+            databaseHelper.runQuery("SELECT id, name from db_name.table_name where id = 2;")
 
             call.respondHtml {
                 head {
