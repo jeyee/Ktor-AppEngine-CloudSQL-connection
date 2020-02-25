@@ -4,6 +4,14 @@ I spent a day figuring out how to connect Ktor on AppEngine to CloudSQL. Posting
 Official google documentation: https://cloud.google.com/sql/docs/mysql/connect-app-engine
 
 
+## How To Run
+
+1. Clone this repo
+2. In `DatabaseHelper` class, update the constants `CLOUD_SQL_CONNECTION_NAME`, `USERNAME` and `PASSWORD`
+3. In `HelloApplication` class, update the SQL query in `databaseHelper.runQuery("SELECT id, name from db_name.table_name where id = 2;")` with your own query string.
+4. In the project root, run the following command `./gradlew appengineRun`.
+5. In your own browser, visit `localhost:8080` to see the results.
+6. If you wish to deploy the code to App Engine, run `./gradlew appengineDeploy`.
 ## Common Issues
 > Caused by: java.lang.ClassNotFoundException: com.google.appengine.api.ThreadManager
 
